@@ -7,8 +7,11 @@ function Fullrecipe() {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
 
     const [fullrecipe, setfullrecipe] = useState([])
+    const [loading, setloading] = useState(true)
+    
 
     useEffect(() => {
+    setloading(true);
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
@@ -35,9 +38,20 @@ function Fullrecipe() {
                     };
                 });
                 setfullrecipe(fulldata)
+    setloading(false);
+
             })
             .catch((error) => console.error(error));
     }, [url])
+
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600 border-r-4 border-blue-400"></div>
+            </div>
+        );
+    }
+    
 
     return (
         <div>

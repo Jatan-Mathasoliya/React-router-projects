@@ -8,6 +8,7 @@ const [loading, setloading] = useState(true)
 const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
 
 useEffect(()=>{
+    setloading(true);
     fetch(url)
     .then((response)=>response.json())
     .then(data=>{
@@ -17,7 +18,7 @@ useEffect(()=>{
             name:item.strMeal
         }))
         setmeals(meals)
-        setTimeout(() => setloading(false), 5000)
+        setloading(false)
     })
     .catch((error)=>console.error(error))
     setloading(false)
@@ -25,8 +26,8 @@ useEffect(()=>{
 
 if (loading) {
     return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+        <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600 border-r-4 border-blue-400"></div>
         </div>
     );
 }

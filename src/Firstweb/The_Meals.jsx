@@ -7,11 +7,12 @@ function Themeals() {
     const url = "https://www.themealdb.com/api/json/v1/1/categories.php"
 
     const [meals, setmeals] = useState([])
-    const [loading, setloading] = useState(false)
+    const [loading, setLoading] = useState(true);
     const [username, setusername] = useState("")
     const [entername, setentername] = useState(false)
 
     const fetchmeals = () => {
+        setLoading(true);
         fetch(url)
             .then((response) => response.json())
             .then(data => {
@@ -23,10 +24,10 @@ function Themeals() {
                 }))
                 // console.log(data)    
                 setmeals(meals_data)
-                setTimeout(() => setloading(false), 2000)
+                setLoading(false);
             })
             .catch((error) => { console.error(error) 
-                setloading(false)})
+                setLoading(false)})
     }
 
     useEffect(() => {
@@ -38,6 +39,15 @@ const handlesubmit = (e)=>{
     if(username.trim()){
         setentername(true)
     }
+}
+
+
+if (loading) {
+    return (
+        <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600 border-r-4 border-blue-400"></div>
+        </div>
+    );
 }
 
 if(!entername){
@@ -67,6 +77,8 @@ if(!entername){
             </div>
     )
 }
+
+
     return (    
         <>
          <div className="text-center p-5 bg-blue-100 shadow-md mb-10">

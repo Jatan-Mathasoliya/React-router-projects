@@ -4,7 +4,7 @@ function Cocktails() {
     const [categories, setCategories] = useState([]);
     const [cocktails, setCocktails] = useState([]);
     const [cat, setCat] = useState("Cocktail");
-    const [loading, setLoading] = useState(true); // State to handle loading
+    const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1); // Current page number
     const cardsPerPage = 12; // Number of cards per page
 
