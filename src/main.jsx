@@ -11,6 +11,7 @@ import Books_detail from './Thiredweb/Books_details'
 import Aboutus from './Aboutus'
 import Fullrecipe from './Firstweb/Fullrecipe'
 import CategoryPage from './Firstweb/CategoryPage'
+import Cocktail_details from './Secondweb/Cocktail_details'
 import Navbar from './Navbar'
 
 const router = createBrowserRouter(
@@ -21,7 +22,8 @@ const router = createBrowserRouter(
       <Route path='meals' element={<Themeals/>}/>
       <Route path="/category/:category" element={<CategoryPage />} />
       <Route path='/:category/:name' element={<Fullrecipe/>}/>
-      <Route path='cocktails' element={<Cocktails/>}/>
+      <Route path='/:category' element={<Cocktails/>}/>
+      <Route path="/Cocktails/:name" element={<Cocktail_details />} />
       <Route path='books' element={<Books_detail/>}/>
       <Route path='bankdetails' element={<Bankdetails/>}/>
     </Route>
