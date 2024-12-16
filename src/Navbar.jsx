@@ -45,14 +45,14 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="/books"
+                to="/Harry_potter/"
                 className={({ isActive }) =>
                   `px-4 py-2 rounded-md ${
                     isActive ? "bg-gray-700 text-white" : "hover:bg-gray-700"
                   }`
                 }
               >
-                Books
+                Harry_potter
               </NavLink>
             </li>
             <li>
