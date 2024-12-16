@@ -29,7 +29,7 @@ const router = createBrowserRouter(
         <Route path='/:category/:name' element={<Fullrecipe />} />
         <Route path='/:category' element={<Cocktails />} />
         <Route path="/Cocktails/:name" element={<Cocktail_details />} />
-        <Route path="harry_potter/:language" element={<Layout />}>
+        <Route path="harry_potter/en" element={<Layout />}>
           <Route path="books" element={<Potter_books />} />
           <Route path="characters" element={<Potter_char />} />
           <Route path="houses" element={<Potter_houses />} />
