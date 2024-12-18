@@ -5,7 +5,7 @@ function Potter_books() {
     const [books, setBooks] = useState([]);
     const {category } = useParams();
 
-    const url = `https://potterapi-fedeperin.vercel.app/en/${category || "books"}`;
+    const url = `https://potterapi-fedeperin.vercel.app/en/${category}`;
 
     const fetchData = () => {
         fetch(url)

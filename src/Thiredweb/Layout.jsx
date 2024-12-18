@@ -4,7 +4,7 @@ import { Outlet, useParams } from "react-router-dom";
 
 function Layout() {
     const {catagory} = useParams()
-    const [select, setSelect] = useState("books");
+    const [select, setSelect] = useState("");
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-300">

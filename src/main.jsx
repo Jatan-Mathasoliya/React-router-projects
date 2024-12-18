@@ -30,7 +30,7 @@ const router = createBrowserRouter(
         <Route path='/:category' element={<Cocktails />} />
         <Route path="/Cocktails/:name" element={<Cocktail_details />} />
         <Route path="harry_potter/en" element={<Layout />}>
-          <Route path="books" element={<Potter_books />} />
+          <Route path=":category" element={<Potter_books />} />
           <Route path="characters" element={<Potter_char />} />
           <Route path="houses" element={<Potter_houses />} />
           <Route path="spells" element={<Potter_spells />} />

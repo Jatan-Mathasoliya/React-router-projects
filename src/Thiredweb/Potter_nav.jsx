@@ -7,9 +7,9 @@ function Potter_nav() {
       <div className="bg-black p-4 shadow-md">
         <div className="flex justify-between items-center">
           <ul className="flex space-x-6 text-lg text-gold font-semibold">
-            <li onClick={(e)=>{category(e.target.value)}}>
+            <li>
               <NavLink
-                to={`/Harry_potter/en/books`}
+                to={`/harry_potter/en/books`}
                 className={({ isActive }) =>
                   isActive ? "text-yellow-400" : "hover:text-yellow-400"
                 }

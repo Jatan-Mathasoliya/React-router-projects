@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 
 function Potter_characters() {
   const [characters, setCharacters] = useState([]);
-  const { language } = useParams(); // Extract language from URL
+  const { category } = useParams(); // Extract language from URL
 
-  const url = `https://potterapi-fedeperin.vercel.app/en/characters`;
+  const url = `https://potterapi-fedeperin.vercel.app/en/${category || "characters"}`;
 
   const fetchData = () => {
     fetch(url)
@@ -28,7 +28,7 @@ function Potter_characters() {
 
   useEffect(() => {
     fetchData();
-  }, [language]);
+  }, [category]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-indigo-900 text-gray-200 py-10 px-6">
